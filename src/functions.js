@@ -80,18 +80,18 @@ function ClickHandler() {
   let halfImageHeight = imageHeight / 2;
   if(mouseButton == LEFT) {
       placed[
-              Math.round(((mouseX - halfImageWidth) / width) * placed.length)
+              clamp(Math.round(((mouseX - halfImageWidth) / width) * placed.length), 0, placed.length - 1)
             ]
             [
-              Math.round(((mouseY - halfImageHeight) / height) * placed[0].length)
+              clamp(Math.round(((mouseY - halfImageHeight) / height) * placed[0].length), 0, placed[0].length - 1)
             ] = selected + 1;
   }
   if (mouseButton == RIGHT) {
     placed[
-              Math.round(((mouseX - halfImageWidth) / width) * placed.length)
+              clamp(Math.round(((mouseX - halfImageWidth) / width) * placed.length), 0, placed.length - 1)
             ]
             [
-              Math.round(((mouseY - halfImageHeight) / height) * placed[0].length)
+              clamp(Math.round(((mouseY - halfImageHeight) / height) * placed[0].length), 0, placed[0].length - 1)
             ] = 0;
   }
 }
